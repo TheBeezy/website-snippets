@@ -1,0 +1,60 @@
+:root {
+    --bg-color: rgb(17, 15, 26);
+    --text-color: white;
+
+    background-color: var(--text-color);
+    color: var(--text-color);
+}
+
+.page-body {
+    margin-top: 30vh;
+    font-family: "Open Sans";
+    text-align: center;
+    user-select: none;
+    font-size: 2rem;
+}
+
+.face {
+    font-size: 7rem;
+}
+
+.textbox {
+    margin: auto;
+}
+
+.face, .textbox {
+    position: relative;
+    z-index: 2;
+}
+
+.face-after {
+    display: none;
+    color: var(--bg-color);
+}
+
+/* In order to change the background color, we need a div that mimics the background */
+
+.fake-background {
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* Hide the before face, textbox and fake background on hover.
+    Show the after face on hover. */
+
+a:hover .face-before {
+    display: none;
+}
+
+a:hover .face-after {
+    display: inline;
+}
+
+a:hover + .textbox + .fake-background {
+    display: none;
+}
